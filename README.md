@@ -10,24 +10,6 @@
 * npm版本 - v6.9.0
 
 
-## 目录结构
-
-```sh
-├── package.json
-├── public
-│   ├── favicon.ico
-│   └── index.html
-├── src
-│   ├── App.css
-│   ├── App.js
-│   ├── App.test.js
-│   ├── index.css
-│   ├── index.js
-│   └── logo.svg
-└── yarn.lock
-```
-
-
 ## 命名规范
 
 引用规范
@@ -35,6 +17,8 @@
 * 组件引入不加后缀 .vue
 * 资源引入请使用 @ 符
 * 引入 index.js时 ，默认'不加文件名'，如：'@/src/views/order'
+
+## 目录结构
 
 ```sh
 ├── public
@@ -120,7 +104,7 @@
 
 
 ```
-> 注：各导航目录及文件的名称尽量与路由的名称对应
+> 注：各导航目录及文件的名称尽量与路由的名称对应
 
 ## Git flow 规范
 
