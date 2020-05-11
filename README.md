@@ -1,399 +1,373 @@
-README
+沃尔玛商家数据平台
 ===========================
-该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为`GitHub Flavored Markdown`。简称`GFM`，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。
-
-****
-	
-|作者|果冻虾仁|
-|---|---
-|知乎|[![zhihu-shield]][zhihu]
-|公众号|编程往事
 
 
-****
-## 目录
-* [横线](#横线)
-* [标题](#标题)
-* [文本](#文本)
-    * 普通文本
-    * 单行文本
-    * 多行文本
-    * 文字高亮
-    * 换行
-    * 斜体
-    * 粗体
-    * 删除线
-* [图片](#图片)
-    * 来源于网络的图片
-    * GitHub仓库中的图片
-* [链接](#链接) 
-    * 文字超链接
-        *  链接外部URL
-        *  链接本仓库里的URL
-    *  锚点
-    * [图片链接](#图片链接)
-* [列表](#列表)
-    * 无序列表
-    * 有序列表
-    * 复选框列表
-* [块引用](#块引用)
-* [代码高亮](#代码高亮)
-* [表格](#表格) 
-* [表情](#表情)
-* [diff语法](#diff语法)
-
-### 横线
------------
-***、---、___可以显示横线效果
-
-***
----
-___
+## 项目背景
+在数据平台中，根据沃尔玛侧提出的品类分析需求，定制化设计，个别模块后续可能通用于其他商家
 
 
+## 项目环境
+* 脚手架版本- @vue/cli 4.3.1
+* node版本 - v12.4.0
+* npm版本 - v6.9.0
 
-标题
-------
+## src 目录结构
 
-# 一级标题  
-## 二级标题  
-### 三级标题  
-#### 四级标题  
-##### 五级标题  
-###### 六级标题  
-
-
-文本
-------
-### 普通文本
-这是一段普通的文本
-### 单行文本
-    Hello,大家好，我是果冻虾仁。
-在一行开头加入1个Tab或者4个空格。
-### 文本块
-#### 语法1
-在连续几行的文本开头加入1个Tab或者4个空格。
-
-    欢迎到访
-    很高兴见到您
-    祝您，早上好，中午好，下午好，晚安
-
-#### 语法2
-使用一对各三个的反引号：
-```
-欢迎到访
-我是C++码农
-你可以在知乎、CSDN、简书搜索【果冻虾仁】找到我
-```
-该语法也可以实现代码高亮，见[代码高亮](#代码高亮)
-### 文字高亮
-文字高亮功能能使行内部分文字高亮，使用一对反引号。
-语法：
-```
-`linux` `网络编程` `socket` `epoll` 
-```
-效果：`linux` `网络编程` `socket` `epoll`
-
-也适合做一篇文章的tag
-#### 换行
-直接回车不能换行，  
-可以在上一行文本后面补两个空格，  
-这样下一行的文本就换行了。
-
-或者就是在两行文本直接加一个空行。
-
-也能实现换行效果，不过这个行间距有点大。
-#### 斜体、粗体、删除线
-
-|语法|效果|
-|----|-----|
-|`*斜体1*`|*斜体1*|
-|`_斜体2_`| _斜体2_|
-|`**粗体1**`|**粗体1**|
-|`__粗体2__`|__粗体2__|
-|`这是一个 ~~删除线~~`|这是一个 ~~删除线~~|
-|`***斜粗体1***`|***斜粗体1***|
-|`___斜粗体2___`|___斜粗体2___|
-|`***~~斜粗体删除线1~~***`|***~~斜粗体删除线1~~***|
-|`~~***斜粗体删除线2***~~`|~~***斜粗体删除线2***~~|
-
-    斜体、粗体、删除线可混合使用
-
-图片
-------
-基本格式：
-```
-![alt](URL title)
-```
-alt和title即对应HTML中的alt和title属性（都可省略）：
-- alt表示图片显示失败时的替换文本
-- title表示鼠标悬停在图片时的显示文本（注意这里要加引号）
-
-URL即图片的url地址，如果引用本仓库中的图片，直接使用**相对路径**就可了，如果引用其他github仓库中的图片要注意格式，即：`仓库地址/raw/分支名/图片路径`，如：
-```
-https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
+```sh
+├── package.json
+├── public
+│   ├── favicon.ico
+│   └── index.html
+├── src
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   └── logo.svg
+└── yarn.lock
 ```
 
-|#|语法|效果|
-|---|---|----
-|1|`![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")`|![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")
-|2|`![][code-past]`|![][code-past]
 
-注意例2的写法使用了**URL标识符**的形式，在[链接](#链接)一节有介绍。
->在文末有code-past的定义：
+## 命名规范
+
+引用规范
+* 脚本引入不加后缀 .js
+* 组件引入不加后缀 .vue
+* 资源引入请使用 @ 符
+* 引入 index.js时 ，默认'不加文件名'，如：'@/src/views/order'
+
+```sh
+├── public
+│   ├── static（第三方静态依赖资源）
+│   ├── index.html
+│   │ 
+├── src
+│   ├── dada 「达达组件库」
+│   │   └── componens （组件库）
+│   │       └── table（命名小写，尽量用'单词'形容，或者用 '-'）
+│   │           └── demo（使用实例）
+│   │           └── src（统一文件名）
+│   │               └── table.vue（功能组件）
+│   │           └── index.js（挂载）
+│   │       └── index.js（挂载）
+|   |
+│   │   └── assets （静态库）
+│   │       └── css （样式）
+│   │           └── common
+│   │               └── table.css （组件样式）
+│   │           └── index.css （样式入口）
+│   │       └── images （图片）
+|   |
+│   │   └── lib（逻辑库）
+│   │       └── utils（工具）
+│   │           └── index.js
+│   │       └── directives（指令）
+│   │           └── index.js
+│   │       └── filters（过滤）
+│   │           └── index.js
+│   │       └── enums（枚举）
+│   │           └── index.js
+│   │       └── mixins（混入）
+│   │           └── table.js // 混入脚本，以功能命名
+|   |
+│   │   └── examples（实例库）
+│   │
+│   │   └── docs（使用说明.md）
+|   |
+|   |   ******************************
+|   |
+|   |
+│   ├── components 「项目私有组件」
+│   │   └── menu （尽量用'单词'形容，或者用 '-'）
+│   │       └── menu.vue
+│   │
+│   ├── api（接口库）
+│   │
+│   ├── assets（静态库）
+│   │
+│   ├── lib（逻辑库）
+│   │   └── utils（工具）
+│   |       └── index.js
+│   │   └── directives（指令）
+│   |       └──  index.js
+│   │   └── filters（过滤）
+│   |       └── index.js
+│   │   └── enums（枚举）
+│   |       └──  index.js
+│   │   └── mixins（混入）
+│   |       └──  table.js // 混入脚本，以功能命名
+│   │
+│   ├── store 「vuex」
+│   │   └── getters.js
+│   │   └── actions.js
+│   │   └── mutations-types.js
+│   │   └── mutations.js
+│   │   └── store.js
+│   │
+│   ├── router 「路由文件」
+│   │   └── index.js
+│   │   └── config.js
+│   │
+│   └── views 「页面」
+│       └── order （一级命名 用'单词'形容）
+│           └── components （页面级组件）
+│           └── index.js （引入时默认'不加文件名'，如：'@/src/views/order' 即可）
+│           └── Edit.js （驼峰命名，编辑or修改，就用此命名）
+├──         └── Detail.js （驼峰命名，详情页or查看页，就用此命名）
+
+
+
+
+
 ```
-[code-past]:/img/codepast-logo.jpg "公众号：编程往事"
+> 注： 各导航目录及文件  的名称尽量与路由的名称对应
+
+## Git flow 规范
+
+```sh
+* **master 分支**：对应线上（正式环境）的代码，一旦版本上线由测试人员发送合并matser邮件，开发人员将对应上线tag版本合并至master分支。
+
+* **testing 分支**：预发布分支，等待被整合到 master 分支中。在测试通过后需要上线时，将该分支合入到 master 分支上。
+
+* **develop 分支**：用于新需求（版本）开发,永远是功能最新最全的分支
+
+* **feature 分支**：开发新功能时，需要从 dev 分支上拉取新分支，新分支的命名规则中必须加入创建者的名字缩写，例如：**feature/LJ-xxx**。
+
+* **hotfix 分支**：当 master 分支上出现 bug 时，使用该分支。命名规则同 dev 分支。
+  **注意: hotfix 合入 master 分支之后，立即完成 master 分支的 tag 操作**。
+
+* **提交 commit**：尽量详细写明提交的内容。
+
 ```
 
-链接
-------
-### 链接外部URL
-
-|#|语法|效果|
-|---|----|-----|
-|1|`[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")`|[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")|
-|2|`[我的知乎][zhihu] `|[我的知乎][zhihu] |
-
-语法2由两部分组成：
-- 第一部分使用两个中括号，[ ]里的标识符（本例中zhihu），可以是数字，字母等的组合，标识符上下对应就行了（**姑且称之为URL标识符**）
-- 第二部分标记实际URL。
-
->使用URL标识符能达到复用的目的，一般把全文所有的URL标识符统一放在文章末尾，这样看起来比较干净。除了干净之外，它还能达到复用的目的，比如你在多个地方想使用同一个链接，那么文内使用标识符，只在最底部给标识符定义出实际的URL链接即可，类似编程语言中的变量。
->>URL标识符是我起的名字，不知道是否准确。囧。。
-
-### 链接本仓库里的URL
-
-|语法|效果|
-|----|-----|
-|`[我的简介](/example/profile.md)`|[我的简介](/example/profile.md)|
-|`[example](./example)`|[example](./example)|
-
-### 图片链接
-给图片加链接的本质是混合图片显示语法和普通的链接语法。普通的链接中[ ]内部是链接要显示的文本，而图片链接[ ]里面则是要显示的图片。  
-直接混合两种语法当然可以，但是十分啰嗦，为此我们可以使用URL标识符的形式。
-
-|#|语法|效果|
-|---|----|:---:|
-|1|`[![weibo-logo]](http://weibo.com/linpiaochen)`|[![weibo-logo]](http://weibo.com/linpiaochen)|
-|2|`[![](/img/zhihu.png "我的知乎，欢迎关注")][zhihu]`|[![](/img/zhihu.png "我的知乎，欢迎关注")][zhihu]|
-|3|`[![csdn-logo]][csdn]`|[![csdn-logo]][csdn]|
-
-因为图片本身和链接本身都支持URL标识符的形式，所以图片链接也可以很简洁（见例3）。  
-注意，此时鼠标悬停时显示的文字是图片的title，而非链接本身的title了。
-> 本文URL标识符都放置于文末
-
-### 锚点
-其实呢，每一个标题都是一个锚点，和HTML的锚点（`#`）类似，比如我们 
-
-|语法|效果|
-|---|---|
-|`[回到顶部](#readme)`|[回到顶部](#readme)|
-
-不过要注意，标题中的英文字母都被转化为**小写字母**了。
-> 以前GitHub对中文支持的不好，所以中文标题不能正确识别为锚点，但是现在已经没问题啦！
-
-## 列表
-### 无序列表
-#### 语法
-```
-* 昵称：果冻虾仁
-- 别名：隔壁老王
-* 英文名：Jelly
-```
-#### 效果
-* 昵称：果冻虾仁
-- 别名：隔壁老王
-* 英文名：Jelly
-
-### 多级无序列表
-#### 语法
-```
-* 编程语言
-    * 脚本语言
-        * Python
-```
-#### 效果
-* 编程语言
-    * 脚本语言
-        * Python
-
-### 一级有序列表
-#### 语法
-就是在数字后面加一个点，再加一个空格。不过看起来起来可能不够明显。 
-```
-面向对象的三个基本特征：
-
-1. 封装
-2. 继承
-3. 多态
-```
-
-#### 效果
-面向对象的三个基本特征：
-
-1. 封装
-2. 继承
-3. 多态
-
-
-### 多级有序列表
-和无序列表一样，有序列表也有多级结构。
-#### 语法
-```
-1. 这是一级的有序列表，数字1还是1
-   1. 这是二级的有序列表，阿拉伯数字在显示的时候变成了罗马数字
-      1. 这是三级的有序列表，数字在显示的时候变成了英文字母
-```
-
-#### 效果
-
-1. 这是一级的有序列表，数字1还是1
-   1. 这是二级的有序列表，阿拉伯数字在显示的时候变成了罗马数字
-      1. 这是三级的有序列表，数字在显示的时候变成了英文字母
-	 
-
-### 复选框列表
-#### 语法
-```
-- [x] 需求分析
-- [x] 系统设计
-- [x] 详细设计
-- [ ] 编码
-- [ ] 测试
-- [ ] 交付
-```
-#### 效果
-
-- [x] 需求分析
-- [x] 系统设计
-- [x] 详细设计
-- [ ] 编码
-- [ ] 测试
-- [ ] 交付
-
-您可以使用这个功能来标注某个项目各项任务的完成情况。
-> Tip:
->> 在GitHub的**issue**中使用该语法是可以实时点击复选框来勾选或解除勾选的，而无需修改issue原文。
-
-## 块引用
-
-### 常用于引用文本
-#### 文本摘自《深入理解计算机系统》P27
-　令人吃惊的是，在哪种字节顺序是合适的这个问题上，人们表现得非常情绪化。实际上术语“little endian”（小端）和“big endian”（大端）出自Jonathan Swift的《格利佛游记》一书，其中交战的两个派别无法就应该从哪一端打开一个半熟的鸡蛋达成一致。因此，争论沦为关于社会政治的争论。只要选择了一种规则并且始终如一的坚持，其实对于哪种字节排序的选择都是任意的。
-> **“端”（endian）的起源**  
-以下是Jonathan Swift在1726年关于大小端之争历史的描述：  
-“……下面我要告诉你的是，Lilliput和Blefuscu这两大强国在过去36个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今的皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了，因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破较小的一端，违令者重罚。”
-
-### 块引用有多级结构
-#### 语法
-```
-> 数据结构
->> 树
->>> 二叉树
->>>> 平衡二叉树
->>>>> 满二叉树
-```
-#### 效果
-> 数据结构
->> 树
->>> 二叉树
->>>> 平衡二叉树
->>>>> 满二叉树
-
-代码高亮
-----------
-
-### 语法
-在三个反引号后面加上编程语言的名字，另起一行开始写代码，最后一行再加上三个反引号。
-
-### 效果
-```Java
-public static void main(String[]args){} //Java
-```
-```c
-int main(int argc, char *argv[]) //C
-```
-```Bash
-echo "hello GitHub" #Bash
-```
+## 注解规范
 ```javascript
-document.getElementById("myH1").innerHTML="Welcome to my Homepage"; //javascipt
-```
-```cpp
-string &operator+(const string& A,const string& B) //cpp
-```
-表格
---------
-
-表头1  | 表头2|
---------- | --------|
-表格单元  | 表格单元 |
-表格单元  | 表格单元 |
-
-| 表头1  | 表头2|
-| ---------- | -----------|
-| 表格单元   | 表格单元   |
-| 表格单元   | 表格单元   |
-
-### 对齐
-表格可以指定对齐方式
-
-| 左对齐 | 居中  | 右对齐 |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
-
-### 混合其他语法
-表格单元中的内容可以和其他大多数GFM语法配合使用，如：  
-#### 使用普通文本的删除线，斜体等效果
-
-| 名字 | 描述 |
-| ------------- | ----------- |
-| Help      | ~~Display the~~ help window.|
-| Close     | _Closes_ a window     |
-
-#### 表格中嵌入图片（链接）
-其实前面介绍图片显示、图片链接的时候为了清晰就是放在在表格中显示的。
-
-| 图片 | 描述 |
-| ---- | ---- |
-|![baidu][baidu-logo] | 百度|
-
-表情
-----------
-Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。
-
-比如`:blush:`，可以显示:blush:。
-
-具体每一个表情的符号码，可以查询GitHub的官方网页[http://www.emoji-cheat-sheet.com](http://www.emoji-cheat-sheet.com)。
-
-但是这个网页每次都打开**奇慢**。。所以我整理到了本repo中，大家可以直接在此查看[emoji](./emoji.md)。
-
-diff语法
----------
-版本控制的系统中都少不了diff的功能，即展示一个文件内容的增加与删除。
-GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示删除。
-#### 语法
-其语法与代码高亮类似，只是在三个反引号后面写diff，
-并且其内容中，可以用 `+ `开头表示新增，`- `开头表示删除。
-另外还有有 `!`和`#`的语法。
-
-#### 效果
-
-```diff
-+ 人闲桂花落，
-- 夜静春山空。
-! 月出惊山鸟，
-# 时鸣春涧中。
+ /**
+ * 日期 周/月 格式处理
+ * @param {string} val 日期 2020-1-1
+ * @param {string} type 转换类型 week/ month
+ * @returns {string} 2020W01/2020M01
+ */
 ```
 
---------------------------------
-[csdn]:http://blog.csdn.net/guodongxiaren "我的博客"
-[zhihu]:https://www.zhihu.com/people/guodongxiaren "我的知乎，欢迎关注"
-[weibo]:http://weibo.com/linpiaochen
-[baidu-logo]:http://www.baidu.com/img/bdlogo.gif "百度logo"
-[weibo-logo]:/img/weibo.png "点击图片进入我的微博"
-[csdn-logo]:/img/csdn.png "我的CSDN博客"
-[code-past]:/img/codepast-logo.jpg "公众号：编程往事"
-[zhihu-shield]:https://img.shields.io/badge/dynamic/json?color=0084ff&logo=zhihu&label=%E6%9E%9C%E5%86%BB%E8%99%BE%E4%BB%81&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dzhihu%26queryKey%3Dguodongxiaren
+### Vue组件中函数的先后顺序
+
+>jsx 编写顺序为：proptype , constructor， 生命周期，自定义方法，具体可参考Eslint中sort-comp规范
+>自我约束，强制组件方法顺序
+
+```vue
+
+
+```
+
+
+## 代码规范
+
+项目使用 `ESLint` 进行代码风格规范，使用 [babel-eslint](https://developer.aliyun.com/mirror/npm/package/babel-eslint) 为基本标准，在这基础上做了定制
+1. vscode 安装一下插件
+    >EsLint、vetur
+2. vscode设置了添加配置项，默认会去查找你项目中的eslint配置文件
+```
+    {
+       // "eslint.autoFixOnSave": true,  // 启用保存时自动修复,默认只支持.js文件 [个人建议关闭此功能，自行约束个人编码规范]
+       "eslint.validate": [
+           "javascript",
+           "javascriptreact",
+           "html",
+           "vue"
+       ]
+    }
+```
+ps: 仅供参考，可用其他方式
+
+```ESLint
+  rules: {
+    "no-console": process.env.NODE_ENV === "production" ? 2 : 0,// 允许在开发环境下使用console
+    "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,// 允许在开发环境下使用debugger
+    "no-alert": 0,//禁止使用alert confirm prompt
+    "no-array-constructor": 2,//禁止使用数组构造器
+    "no-bitwise": 0,//禁止使用按位运算符
+    "no-caller": 1,//禁止使用arguments.caller或arguments.callee
+    "no-catch-shadow": 2,//禁止catch子句参数与外部作用域变量同名
+    "no-class-assign": 2,//禁止给类赋值
+    "no-cond-assign": 2,//禁止在条件表达式中使用赋值语句
+    "no-const-assign": 2,//禁止修改const声明的变量
+    "no-constant-condition": 2,//禁止在条件中使用常量表达式 if(true) if(1)
+    "no-continue": 0,//禁止使用continue
+    "no-control-regex": 2,//禁止在正则表达式中使用控制字符
+    "no-delete-var": 2,//不能对var声明的变量使用delete操作符
+    "no-div-regex": 1,//不能使用看起来像除法的正则表达式/=foo/
+    "no-dupe-keys": 2,//在创建对象字面量时不允许键重复 {a:1,a:1}
+    "no-dupe-args": 2,//函数参数不能重复
+    "no-duplicate-case": 2,//switch中的case标签不能重复
+    "no-else-return": 2,//如果if语句里面有return,后面不能跟else语句
+    "no-empty": 2,//块语句中的内容不能为空
+    "no-empty-character-class": 2,//正则表达式中的[]内容不能为空
+    "no-eq-null": 2,//禁止对null使用==或!=运算符
+    "no-eval": 1,//禁止使用eval
+    "no-ex-assign": 2,//禁止给catch语句中的异常参数赋值
+    "no-extend-native": 2,//禁止扩展native对象
+    "no-extra-bind": 2,//禁止不必要的函数绑定
+    "no-extra-boolean-cast": 2,//禁止不必要的bool转换
+    "no-extra-parens": 2,//禁止非必要的括号
+    "no-extra-semi": 2,//禁止多余的冒号
+    "no-fallthrough": 1,//禁止switch穿透
+    "no-floating-decimal": 2,//禁止省略浮点数中的0 .5 3.
+    "no-func-assign": 2,//禁止重复的函数声明
+    "no-implicit-coercion": 1,//禁止隐式转换
+    "no-implied-eval": 2,//禁止使用隐式eval
+    "no-inline-comments": 0,//禁止行内备注
+    "no-inner-declarations": [2, "functions"],//禁止在块语句中使用声明（变量或函数）
+    "no-invalid-regexp": 2,//禁止无效的正则表达式
+    "no-irregular-whitespace": 2,//不能有不规则的空格
+    "no-iterator": 2,//禁止使用__iterator__ 属性
+    "no-label-var": 2,//label名不能与var声明的变量名相同
+    "no-labels": 2,//禁止标签声明
+    "no-lone-blocks": 2,//禁止不必要的嵌套块
+    "no-lonely-if": 2,//禁止else语句内只有if语句
+    "no-loop-func": 1,//禁止在循环中使用函数（如果没有引用外部变量不形成闭包就可以）
+    "no-mixed-requires": [0, false],//声明时不能混用声明类型
+    "linebreak-style": [0, "windows"],//换行风格
+    "no-multi-spaces": 1,//不能用多余的空格
+    "no-multi-str": 2,//字符串不能用\换行
+    "no-multiple-empty-lines": [1, { "max": 2 }],//空行最多不能超过2行
+    "no-native-reassign": 2,//不能重写native对象
+    "no-negated-in-lhs": 2,//in 操作符的左边不能有!
+    "no-nested-ternary": 0,//禁止使用嵌套的三目运算
+    "no-new": 1,//禁止在使用new构造一个实例后不赋值
+    "no-new-func": 1,//禁止使用new Function
+    "no-new-object": 2,//禁止使用new Object()
+    "no-new-require": 2,//禁止使用new require
+    "no-new-wrappers": 2,//禁止使用new创建包装实例，new String new Boolean new Number
+    "no-obj-calls": 2,//不能调用内置的全局对象，比如Math() JSON()
+    "no-octal": 2,//禁止使用八进制数字
+    "no-octal-escape": 2,//禁止使用八进制转义序列
+    "no-param-reassign": 2,//禁止给参数重新赋值
+    "no-path-concat": 0,//node中不能使用__dirname或__filename做路径拼接
+    "no-plusplus": 0,//禁止使用++，--
+    "no-process-env": 0,//禁止使用process.env
+    "no-process-exit": 0,//禁止使用process.exit()
+    "no-proto": 2,//禁止使用__proto__属性
+    "no-redeclare": 2,//禁止重复声明变量
+    "no-regex-spaces": 2,//禁止在正则表达式字面量中使用多个空格 /foo bar/
+    "no-restricted-modules": 0,//如果禁用了指定模块，使用就会报错
+    "no-return-assign": 1,//return 语句中不能有赋值表达式
+    "no-script-url": 0,//禁止使用javascript:void(0)
+    "no-self-compare": 2,//不能比较自身
+    "no-sequences": 0,//禁止使用逗号运算符
+    "no-shadow": 0,//外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
+    "no-shadow-restricted-names": 2,//严格模式中规定的限制标识符不能作为声明时的变量名使用
+    "no-spaced-func": 2,//函数调用时 函数名与()之间不能有空格
+    "no-sparse-arrays": 2,//禁止稀疏数组， [1,,2]
+    "no-sync": 0,//nodejs 禁止同步方法
+    "no-ternary": 0,//禁止使用三目运算符
+    "no-trailing-spaces": 1,//一行结束后面不要有空格
+    "no-this-before-super": 0,//在调用super()之前不能使用this或super
+    "no-throw-literal": 2,//禁止抛出字面量错误 throw "error";
+    "no-undef": 1,//不能有未定义的变量
+    "no-undef-init": 2,//变量初始化时不能直接给它赋值为undefined
+    "no-undefined": 2,//不能使用undefined
+    "no-unexpected-multiline": 2,//避免多行表达式
+    "no-underscore-dangle": 1,//标识符不能以_开头或结尾
+    "no-unneeded-ternary": 2,//禁止不必要的嵌套 var isYes = answer === 1 ? true : false;
+    "no-unreachable": 2,//不能有无法执行的代码
+    "no-unused-expressions": 2,//禁止无用的表达式
+    "no-use-before-define": 2,//未定义前不能使用
+    "no-useless-call": 2,//禁止不必要的call和apply
+    "no-var": 0,//禁用var，用let和const代替
+    "no-warning-comments": [1, { "terms": ["todo", "fixme", "xxx"], "location": "start" }],//不能有警告备注
+    "no-with": 2,//禁用with
+    "array-bracket-spacing": [2, "never"],//是否允许非空数组里面有多余的空格
+    "arrow-parens": 0,//箭头函数用小括号括起来
+    "arrow-spacing": 0,//=>的前/后括号
+    "accessor-pairs": 0,//在对象中使用getter/setter
+    "block-scoped-var": 0,//块语句中使用var
+    "brace-style": [1, "1tbs"],//大括号风格
+    "callback-return": 1,//避免多次调用回调什么的
+    "camelcase": 2,//强制驼峰法命名
+    "comma-dangle": [2, "never"],//对象字面量项尾不能有逗号
+    "comma-spacing": 0,//逗号前后的空格
+    "comma-style": [2, "last"],//逗号风格，换行时在行首还是行尾
+    "complexity": [0, 11],//循环复杂度
+    "computed-property-spacing": [0, "never"],//是否允许计算后的键名什么的
+    "consistent-return": 0,//return 后面是否允许省略
+    "consistent-this": [0, "that"],//this别名
+    "constructor-super": 0,//非派生类不能调用super，派生类必须调用super
+    "dot-location": 0,//对象访问符的位置，换行的时候在行首还是行尾
+    "dot-notation": [0, { "allowKeywords": true }],//避免不必要的方括号
+    "eol-last": 0,//文件以单一的换行符结束
+    "eqeqeq": 2,//必须使用全等
+    "func-names": 0,//函数表达式必须有名字
+    "func-style": [0, "declaration"],//函数风格，规定只能使用函数声明/函数表达式
+    "generator-star-spacing": 0,//生成器函数*的前后空格
+    "guard-for-in": 0,//for in循环要用if语句过滤
+    "handle-callback-err": 0,//nodejs 处理错误
+    "id-length": 0,//变量名长度
+    "indent": [2, 4],//缩进风格
+    "init-declarations": 0,//声明时必须赋初值
+    "key-spacing": [2, { "beforeColon": false, "afterColon": true }],//对象字面量中冒号的前后空格
+    "lines-around-comment": 0,//行前/行后备注
+    "max-statements": [0, 10],//函数内最多有几个声明
+    "new-cap": 2,//函数名首行大写必须使用new方式调用，首行小写必须用不带new方式调用
+    "new-parens": 2,//new时必须加小括号
+    "object-curly-spacing": [0, "never"],//大括号内是否允许不必要的空格
+    "object-shorthand": 0,//强制对象字面量缩写语法
+    "one-var": 1,//连续声明
+    "operator-assignment": [0, "always"],//赋值运算符 += -=什么的
+    "operator-linebreak": [2, "after"],//换行时运算符在行尾还是行首
+    "padded-blocks": 0,//块语句内行首行尾是否要空行
+    "prefer-const": 0,//首选const
+    "prefer-spread": 0,//首选展开运算
+    "prefer-reflect": 0,//首选Reflect的方法
+    "radix": 2,//parseInt必须指定第二个参数
+    "id-match": 0,//命名检测
+    "require-yield": 0,//生成器函数必须有yield
+    "semi": [2, "always"],//语句强制分号结尾
+    "semi-spacing": [0, { "before": false, "after": true }],//分号前后空格
+    "sort-vars": 0,//变量声明时排序
+    "space-after-keywords": [0, "always"],//关键字后面是否要空一格
+    "space-before-blocks": [0, "always"],//不以新行开始的块{前面要不要有空格
+    "space-before-function-paren": [2, "never"],// 不允许函数与括号之前有空格
+    "space-infix-ops": 0,//中缀操作符周围要不要有空格
+    "space-return-throw-case": 0,//return throw case后面要不要加空格
+    "space-unary-ops": [0, { "words": true, "nonwords": true }],//一元运算符的前/后要不要加空格
+    "spaced-comment": 2,//注释风格要有空格什么的
+    "strict": 2,//使用严格模式
+    "use-isnan": 2,//禁止比较时使用NaN，只能用isNaN()
+    "valid-jsdoc": 0,//jsdoc规则
+    "valid-typeof": 2,//必须使用合法的typeof的值
+    "vars-on-top": 0,//var必须放在作用域顶部
+    "wrap-iife": [2, "inside"],//立即执行函数表达式的小括号风格
+    "wrap-regex": 0,//正则表达式字面量用小括号包起来
+    "yoda": [2, "never"],//禁止尤达条件
+    "radix": 0,
+    "no-undef": 0,
+    "vue/no-use-v-if-with-v-for": [0],
+    "keyword-spacing": [2],// 关键字前后不加空格
+    "indent": ["error", 2, { "SwitchCase": 1 }], // @fixable jsx 的 children 缩进必须为四个空格
+    "no-proto": 0, // 禁止使用 __proto__
+    "one-var": [2, { const: "never" }], //是否允许使用逗号一次声明多个变量  所有 const 声明必须独占一行，不允许用逗号定义多个
+    "no-extra-boolean-cast": 0,// 允许双重否定
+    'eol-last': 2,//这句话表示在文件末尾可以不加回车
+    "no-unused-vars": [2,// 禁止定义不使用的变量
+      {
+        vars: "all", // 变量定义必须被使用
+        args: "none", // 对于函数形参不检测
+        ignoreRestSiblings: true, // 忽略剩余子项 fn(...args)，{a, b, ...coords}
+        caughtErrors: "none" // 忽略 catch 语句的参数使用
+      }
+    ]
+  }
+```
+
+
+```
+
+### Plan
+
+```js
+- [ ] 1. 
+
+- [x] 2. 
+```
